@@ -44,10 +44,10 @@ class Message {
   get displayUsername() { return this.message.displayUsername; }
 
   reply(content = '', embed = null) {
-    return this.message.reply(content, null, false, embed);
+    return this.message.reply(content, false, embed);
   }
   send(content = '', embed = null) {
-    return this.message.channel.sendMessage(content, null, false, embed);
+    return this.message.channel.sendMessage(content, false, embed);
   }
 }
 
