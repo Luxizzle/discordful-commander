@@ -34,7 +34,11 @@ cmder
     this.reply('Pong!') // The enviroment allows you to call reply or send to send a message
   });
 
-bot.event('MESSAGE_CREATE')
+bot.event('MESSAGE_CREATE') // Create an event pipeline with discordful
+  .use(cmder.parse()) // Add the parser to the event pipeline
+  .use(function(success, message) { // Next in line gives a success parameter if there was a command activated
+    if (success) console.log(`${message.author.username}#${message.author.discriminator} - ${message.resolveContent()}`);
+  });
 ```
 
 More documentation will come later
