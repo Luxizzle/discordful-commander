@@ -76,7 +76,7 @@ class Commander {
   parse() {
     var _this = this;
     return function(e, cb) {
-      var message = e.message
+      var message = e.message || e;
       if (message.author.id === _this.discordful.User.id && _this.options.selfbot === false) {
         return cb(null, false, message);
       } else if (message.author.id !== _this.discordful.User.id && _this.options.selfbot === true) {
