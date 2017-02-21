@@ -68,14 +68,15 @@ class Commander {
     }
   }
 
-  parseRaw(message) {
-    return this.parse()(message);
+  parseRaw(e) {
+    return this.parse()(e.message);
   }
 
   // rewrite this because of the Command.options.ignorePrefix and -customPrefix things
   parse() {
     var _this = this;
-    return function(message, cb) {
+    return function(e, cb) {
+      var message = e.message
       if (message.author.id === _this.discordful.User.id && _this.options.selfbot === false) {
         return cb(null, false, message);
       } else if (message.author.id !== _this.discordful.User.id && _this.options.selfbot === true) {
