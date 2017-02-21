@@ -1,0 +1,22 @@
+{
+  "name": "discordful-commander",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chrono-node": "^1.2.5",
+    "debug": "^2.6.1",
+    "glob": "^7.1.1",
+    "lodash": "^4.17.4",
+    "lowdb": "^0.15.4",
+    "shortid": "^2.2.6"
+  },
+  "devDependencies": {
+    "ava": "^0.18.0"
+  }
+}
