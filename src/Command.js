@@ -43,7 +43,7 @@ class Command {
   run(message) {
     var sb = new Sandbox(this, message);
     this.callStack.forEach((cb) => {
-      cb.fn.apply(sb, [message].concat(message.args.slice(0)));
+      cb.fn.apply(sb, [message].concat(message.args.slice(1)));
     });
   }
 }
